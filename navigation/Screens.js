@@ -8,7 +8,7 @@ import { Block, Text, theme } from "galio-framework";
 import ComponentsScreen from '../screens/Components';
 import HomeScreen from '../screens/Home';
 import OnboardingScreen from '../screens/Onboarding';
-import ProfileScreen from '../screens/Profile';
+//import ProfileScreen from '../screens/Profile';
 import ProScreen from '../screens/Pro';
 import SettingsScreen from '../screens/Settings';
 import SearchScreen from '../screens/Search';
@@ -27,41 +27,6 @@ const { width } = Dimensions.get("screen");
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
-
-const profile = {
-  avatar: Images.Profile,
-  //avatar: "https://avatars1.githubusercontent.com/u/22460138?v=4",
-  name: "Meena Erian",
-  type: "Developer",
-  plan: "Pro",
-  rating: 4.8
-};
-
-/*
-function ProfileStack(props) {
-  return (
-    <Stack.Navigator initialRouteName="Profile" mode="card" headerMode="screen">
-      <Stack.Screen
-        name="Profile"
-        component={HomeScreen}
-        options={{
-          header: ({ navigation, scene }) => (
-            <Header
-              white
-              transparent
-              title="Profile"
-              scene={scene}
-              navigation={navigation}
-            />
-          ),
-          headerTransparent: true
-        }}
-      />
-    </Stack.Navigator>
-  );
-}
-*/
-
 
 
 function ReservationStack(props) {
@@ -258,7 +223,7 @@ function HomeStack(props) {
             />
           ),
           header: ({ navigation, scene }) => (
-            <Header back  title="Treatment" navigation={navigation} scene={scene} />
+            <Header back title="Treatment" navigation={navigation} scene={scene} />
           )
         }}
       />
@@ -271,7 +236,7 @@ function AppStack(props) {
     <Drawer.Navigator
       style={{ flex: 1 }}
       drawerContent={props => (
-        <CustomDrawerContent {...props} profile={profile} />
+        <CustomDrawerContent {...props} /*profile={profile}*/ />
       )}
       drawerStyle={{
         backgroundColor: "white",
@@ -390,94 +355,6 @@ function AppStack(props) {
           )
         }}
       />
-
-
-      {/*
-      <Drawer.Screen
-        name="Woman"
-        component={SettingsStack}
-        options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="md-woman"
-              family="ionicon"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
-              style={{ marginLeft: 4, marginRight: 4 }}
-            />
-          )
-        }}
-      />
-      <Drawer.Screen
-        name="Man"
-        component={SettingsStack}
-        options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="man"
-              family="entypo"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
-            />
-          )
-        }}
-      />
-      <Drawer.Screen
-        name="Kids"
-        component={SettingsStack}
-        options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="baby"
-              family="GalioExtra"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
-            />
-          )
-        }}
-      />
-      <Drawer.Screen
-        name="New Collection"
-        component={SettingsStack}
-        options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="grid-on"
-              family="material"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
-            />
-          )
-        }}
-      />
-      <Drawer.Screen
-        name="Profile"
-        component={ProfileStack}
-        options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="circle-10"
-              family="GalioExtra"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
-            />
-          )
-        }}
-      />
-      <Drawer.Screen
-        name="Pro"
-        component={ProfileStack}
-        options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="circle-10"
-              family="GalioExtra"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
-            />
-          )
-        }}
-      />*/}
       <Drawer.Screen
         name="Settings"
         component={SettingsStack}
@@ -508,8 +385,6 @@ function AppStack(props) {
           )
         }}
       />
-
-
 
       <Drawer.Screen
         name="Sign In"
