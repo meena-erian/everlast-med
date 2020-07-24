@@ -66,7 +66,7 @@ export default class App extends React.Component {
           <GalioProvider theme={materialTheme}>
             <Block flex>
               {/*Platform.OS === 'ios' && <StatusBar barStyle="default" />*/}
-              <StatusBar hidden={true} backgroundColor={materialTheme.COLORS.EVERLAST_GREEN} />
+              <StatusBar hidden={false} backgroundColor={materialTheme.COLORS.EVERLAST_GREEN} />
               <Screens />
             </Block>
           </GalioProvider>

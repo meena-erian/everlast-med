@@ -5,7 +5,7 @@ import { Button, Block, Text, Input, theme } from 'galio-framework';
 //import { Icon, Product } from '../components';
 
 const { width } = Dimensions.get('screen');
-//import services from '../constants/services';
+import {about} from '../constants';
 
 export default class About extends React.Component {
 
@@ -16,15 +16,7 @@ export default class About extends React.Component {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.services}>
           <Block flex>
-            <Text h1>About page</Text>
-            {/*services.map((product, index) =>
-              <Product
-                key={`product-${index}`}
-                product={product}
-                horizontal={true}
-                full={product.full}
-              />
-            )*/}
+            <Text>{about}</Text>
           </Block>
         </ScrollView>
       </Block>
@@ -75,6 +67,9 @@ const styles = StyleSheet.create({
   divider: {
     borderRightWidth: 0.3,
     borderRightColor: theme.COLORS.MUTED,
+  },
+  content:{
+    paddingHorizontal: theme.SIZES.BASE * 2,
   },
   services: {
     width: width - theme.SIZES.BASE * 2,

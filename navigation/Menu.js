@@ -30,7 +30,7 @@ function CustomDrawerContent({
     //"Pro",
     //"New Collection",
     //"Profile",
-    "Settings",
+    //"Settings",
     //"Components"
   ];
   return (

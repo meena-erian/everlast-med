@@ -5,20 +5,16 @@ import { Block, Text, theme } from "galio-framework";
 import Icon from "./Icon";
 import materialTheme from "../constants/Theme";
 
-/**
-    "Reservation",
-    "Doctors",
-    "About Us",
-    "Contact Us",
-    "Terms of Service",
- */
+
 
 
 const proScreens = [
-  //"Woman",
-  //"Man",
-  //"Kids",
-  //"New Collection",
+  //"Home",
+  "Reservation",
+  //"Doctors",
+  //"About Us",
+  "Contact Us",
+  "Terms of Service",
   "Sign In",
   "Sign Up"
 ];
@@ -200,7 +196,7 @@ class DrawerItem extends React.Component {
     const proScreen = proScreens.includes(title);
     //if(focused) console.log(title, "is focused");
     return (
-      <TouchableOpacity style={{ height: 55 }} onPress={() => { navigation.navigate(title)}}>
+      <TouchableOpacity style={{ height: 55 }} onPress={() => { navigation.navigate(proScreen? "Pro": title)}}>
         <Block
           flex
           row

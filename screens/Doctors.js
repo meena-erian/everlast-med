@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { Button, Block, Text, Input, theme } from 'galio-framework';
 
-//import { Icon, Product } from '../components';
+import { Doctor } from '../components';
 
 const { width } = Dimensions.get('screen');
-//import services from '../constants/services';
+import {doctors} from '../constants';
 
 export default class Doctors extends React.Component {
 
@@ -16,15 +16,12 @@ export default class Doctors extends React.Component {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.services}>
           <Block flex>
-            <Text h1>Doctors page</Text>
-            {/*services.map((product, index) =>
-              <Product
-                key={`product-${index}`}
-                product={product}
-                horizontal={true}
-                full={product.full}
+            {doctors.map((doctor, index) =>
+              <Doctor
+                key={`doctor-${index}`}
+                doctor={doctor}
               />
-            )*/}
+            )}
           </Block>
         </ScrollView>
       </Block>
