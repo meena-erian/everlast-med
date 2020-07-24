@@ -1,6 +1,6 @@
 /**
  * @file scrapper.js
- * @summary This is aclient-size JavaScript code meant to automatically
+ * @summary This is a client-size JavaScript code meant to automatically
  *  collect the list of services provided by Everlast Medical Center as
  *  listed on https://www.everlastwellness.com/
  */
