@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "Everlast",
-    "description": "React Native app for Everlast wellness medical center",
-    "slug": "everlast-wellness-medical-center",
+    "description": "React Native app for Everlast wellness medical centre",
+    "slug": "everlast-wellness-medical-centere",
     "privacy": "unlisted",
     "sdkVersion": "37.0.0",
     "platforms": [

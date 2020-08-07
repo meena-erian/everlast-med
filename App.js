@@ -16,7 +16,7 @@ import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import { Block, GalioProvider } from 'galio-framework';
 
-import { Images, services, materialTheme } from './constants/';
+import { Images, services, doctors, materialTheme } from './constants/';
 
 import { NavigationContainer } from '@react-navigation/native';
 import Screens from './navigation/Screens';
@@ -33,14 +33,17 @@ const assetImages = [
   Images.Onboarding,
 ];
 
-// cache product images
-services.map(product => assetImages.push(product.image));
+//services.map(service => assetImages.push(service.image));
+//doctors.map(doctor => assetImages.push(doctor.image));
 
 function cacheImages(images) {
+  //console.log("Caching ", images);
   return images.map(image => {
     if (typeof image === 'string') {
+      console.log("Caching image: ", image);
       return Image.prefetch(image);
     } else if (image){
+      console.log(`ERrrrr: Image link is provided in type "${typeof image}"`);
       return Asset.fromModule(image).downloadAsync();
     }
   });
@@ -82,8 +85,6 @@ export default class App extends React.Component {
   };
 
   _handleLoadingError = error => {
-    // In this case, you might want to report the error to your error
-    // reporting service, for example Sentry
     console.warn(error);
   };
 

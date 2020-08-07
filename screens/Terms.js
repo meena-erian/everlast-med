@@ -1,11 +1,69 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Dimensions, ScrollView, View } from 'react-native';
 import { Button, Block, Text, Input, theme } from 'galio-framework';
 
-//import { Icon, Product } from '../components';
+import { TabView, SceneMap } from 'react-native-tab-view';
+
 
 const { width } = Dimensions.get('screen');
-//import services from '../constants/services';
+
+
+const tabs = [
+  "First",
+  "Second",
+  "Third",
+  "Fourth",
+  "Fifth",
+  // "Sixes",
+  // "Sevens",
+  // "Eights",
+  // "Nins",
+  // "tens",
+  // "Elevens"
+]
+
+const initialLayout = { width: Dimensions.get('window').width };
+
+const FirstRoute = () => (
+  <View style={[styles.scene, { backgroundColor: '#ff4081' }]} />
+);
+ 
+const SecondRoute = () => (
+  <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
+);
+
+
+let tabObj = {};
+
+tabs.forEach((tab) => {
+  tabObj[tab] = FirstRoute
+});
+
+
+
+function TabViewExample() {
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState(
+    tabs.map((tab) => {return {key: tab, title: tab}})
+  );
+ 
+  const renderScene = SceneMap({
+    ...tabObj,
+    //first: FirstRoute,
+    //second: SecondRoute,
+  });
+ 
+  return (
+    <TabView
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      initialLayout={initialLayout}
+    />
+  );
+}
+
+
 
 export default class Doctors extends React.Component {
 
@@ -16,15 +74,7 @@ export default class Doctors extends React.Component {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.services}>
           <Block flex>
-            <Text h1>Terms page</Text>
-            {/*services.map((product, index) =>
-              <Product
-                key={`product-${index}`}
-                product={product}
-                horizontal={true}
-                full={product.full}
-              />
-            )*/}
+            <TabViewExample />
           </Block>
         </ScrollView>
       </Block>
@@ -33,6 +83,9 @@ export default class Doctors extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  scene: {
+    flex: 1,
+  },
   home: {
     width: width,
   },
