@@ -178,11 +178,11 @@ class DrawerItem extends React.Component {
   renderLabel = () => {
     const { title } = this.props;
 
-    if (proScreens.includes(title)) {
+    if (false && proScreens.includes(title)) {
       return (
         <Block middle style={styles.pro}>
           <Text size={12} color="white">
-            PRO
+            NUL
           </Text>
         </Block>
       );

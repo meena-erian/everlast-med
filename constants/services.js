@@ -1,4 +1,4 @@
-export default [
+const services = [
   {
     "title": "Special Diet Program",
     "category": "Anti-Aging Programs",
@@ -437,4 +437,13 @@ export default [
     "image": "https://www.everlastwellness.com/wp-content/uploads/2019/08/body-enhance-plastic-surgerian.jpg",
     "description": "Beauty is relative to each individual. There are those that like to be skinny while others prefer to have that hour glass figure. Regardless of your choice, the Everlast’s Comprehensive Body Enhancement Program provides you with a plethora of plastic surgery options to give you immediate and long term results.Whether you opt for a tummy tuck or breast augmentation, a fat transfer or a neck lift, we can assure that this approach to beauty which may seem drastic and daunting to you, are every day common procedures that are safely done for our in-house Specialist Plastic Surgeon."
   }
-]
+];
+
+let categories = {};
+
+services.map((service)=>service.category).forEach(cat => {
+  categories[cat] = cat;
+});
+
+export default services;
+export {categories};

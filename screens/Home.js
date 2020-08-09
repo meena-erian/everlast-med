@@ -1,77 +1,53 @@
-import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { Button, Block, Text, Input, theme } from 'galio-framework';
+import React from "react";
+import { StyleSheet, Dimensions, ScrollView } from "react-native";
+import { Button, Block, Text, Input, theme } from "galio-framework";
+import TabsHeader from "../components/TabsHeader";
+import { Icon, Product } from "../components/";
+import { createAppContainer } from "react-navigation";
+import { createMaterialTopTabNavigator } from "react-navigation-tabs";
+const { width } = Dimensions.get("screen");
+import services, { categories } from "../constants/services";
 
-import { Icon, Product } from '../components/';
-
-const { width } = Dimensions.get('screen');
-import services from '../constants/services';
-
-export default class Home extends React.Component {
-  renderSearch = () => {
-    const { navigation } = this.props;
-    const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material" />
-
-    return (
-      <Input
-        right
-        color="black"
-        style={styles.search}
-        iconContent={iconCamera}
-        placeholder="What are you looking for?"
-        onFocus={() => navigation.navigate('Pro')}
-      />
-    )
-  }
-
-  renderTabs = () => {
-    const { navigation } = this.props;
-
-    return (
-      <Block row style={styles.tabs}>
-        <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
-          <Block row middle>
-            <Icon name="grid" family="feather" style={{ paddingRight: 8 }} />
-            <Text size={16} style={styles.tabTitle}>Categories</Text>
-          </Block>
-        </Button>
-        <Button shadowless style={styles.tab} onPress={() => navigation.navigate('Pro')}>
-          <Block row middle>
-            <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} />
-            <Text size={16} style={styles.tabTitle}>Best Deals</Text>
-          </Block>
-        </Button>
-      </Block>
-    )
-  }
-
-
-  renderProducts = () => {
-    return (
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.services}>
-        <Block flex>
-          {services.map((product, index) =>
-            <Product
-              key={`product-${index}`}
-              product={product}
-              horizontal={true}//{product.horizontal}
-              full={product.full}
-            />
-          )}
-        </Block>
-      </ScrollView>
-    )
-  }
-
+class ProductsList extends React.Component {
   render() {
+    const { navigation } = this.props;
+    const currentCategory = navigation.state.routeName;
+    const includedServices = services.filter(service => service.category === currentCategory);
     return (
       <Block flex center style={styles.home}>
-        {this.renderProducts()}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.services}
+        >
+          <Block flex>
+            {includedServices.map((product, index) => (
+              <Product
+                key={`product-${index}`}
+                product={product}
+                horizontal={true} //{product.horizontal}
+                full={product.full}
+              />
+            ))}
+          </Block>
+        </ScrollView>
       </Block>
     );
   }
+}
+
+let tabs = {};
+Object.keys(categories).forEach((cat) => (tabs[cat] = ProductsList));
+
+const TabNavigator = createMaterialTopTabNavigator(tabs, {
+  tabBarComponent: TabsHeader,
+  lazy: true,
+  //initialRouteName: props.initialRouteName,
+});
+
+const UnlimitedTabs = createAppContainer(TabNavigator);
+
+export default function Home(props){
+  return <UnlimitedTabs />
 }
 
 const styles = StyleSheet.create({
@@ -90,7 +66,7 @@ const styles = StyleSheet.create({
     shadowColor: theme.COLORS.BLACK,
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowRadius: 8,
     shadowOpacity: 0.2,
@@ -104,7 +80,7 @@ const styles = StyleSheet.create({
   },
   tab: {
     backgroundColor: theme.COLORS.TRANSPARENT,
-    width: width * 0.50,
+    width: width * 0.5,
     borderRadius: 0,
     borderWidth: 0,
     height: 24,
@@ -112,7 +88,7 @@ const styles = StyleSheet.create({
   },
   tabTitle: {
     lineHeight: 19,
-    fontWeight: '300'
+    fontWeight: "300",
   },
   divider: {
     borderRightWidth: 0.3,
