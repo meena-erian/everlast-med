@@ -7,6 +7,8 @@ import { createAppContainer } from "react-navigation";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 const { width } = Dimensions.get("screen");
 import services, { categories } from "../constants/services";
+import materialTheme from "../constants/Theme";
+
 
 class ProductsList extends React.Component {
   render() {
@@ -38,10 +40,23 @@ class ProductsList extends React.Component {
 let tabs = {};
 Object.keys(categories).forEach((cat) => (tabs[cat] = ProductsList));
 
+const shadowStyle = {
+  shadowColor: 'black',
+  shadowOffset: { width: 0, height: 2 },
+  shadowRadius: 6,
+  shadowOpacity: 0.2,
+  elevation: 3,
+};
+
 const TabNavigator = createMaterialTopTabNavigator(tabs, {
   tabBarComponent: TabsHeader,
   lazy: true,
   //initialRouteName: props.initialRouteName,
+  tabBarOptions: {
+    headerStyle: shadowStyle, //Style applied to the nav header
+    tabStyle: {color: materialTheme.COLORS.EVERLAST_BLUE}, //Style applied to all tabs
+    activeTabStyle: {color: materialTheme.COLORS.EVERLAST_GREEN}, //Style applied only to the currently active tab
+  },
 });
 
 const UnlimitedTabs = createAppContainer(TabNavigator);
@@ -60,6 +75,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     borderWidth: 1,
     borderRadius: 3,
+  },
+  shadow: {
+    backgroundColor: theme.COLORS.WHITE,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 0.2,
+    elevation: 3,
   },
   header: {
     backgroundColor: theme.COLORS.WHITE,

@@ -84,6 +84,6 @@ const styles = StyleSheet.create({
   },
   tabText: {
     fontSize: 17,
-    //textTransform: "uppercase",
+    textTransform: "uppercase",
   },
 });
