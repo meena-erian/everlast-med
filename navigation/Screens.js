@@ -177,8 +177,6 @@ function HomeStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              search
-              tabs
               title="Home"
               navigation={navigation}
               scene={scene}
@@ -200,12 +198,12 @@ function HomeStack(props) {
         name="Search"
         component={SearchScreen}
         options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="md-person-add"
-              family="ionicon"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
+          header: ({ navigation, scene }) => (
+            <Header
+              back
+              title="Search"
+              navigation={navigation}
+              scene={scene}
             />
           )
         }}
