@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Dimensions, ScrollView, View } from "react-native";
 import { Button, Block, Text, Input, theme } from "galio-framework";
 
-import { Icon, Product } from "../components";
+import { Icon, Service } from "../components";
 
 const { width } = Dimensions.get("screen");
 import services from "../constants/services";
@@ -37,9 +37,9 @@ export default class Search extends React.Component {
     );
   };
 
-  renderProducts = () => {
-    let prods = services.filter((product) =>
-      product.title.toLowerCase().includes(this.state.keyWord.toLowerCase())
+  renderServices = () => {
+    let filteredServices = services.filter((service) =>
+      service.title.toLowerCase().includes(this.state.keyWord.toLowerCase())
     );
     return (
       <ScrollView
@@ -47,13 +47,11 @@ export default class Search extends React.Component {
         contentContainerStyle={styles.services}
       >
         <Block flex>
-          {prods.length ? (
-            prods.map((product, index) => (
-              <Product
-                key={`product-${index}`}
-                product={product}
-                horizontal={true} //{product.horizontal}
-                full={product.full}
+          {filteredServices.length ? (
+            filteredServices.map((service, index) => (
+              <Service
+                key={`Service-${index}`}
+                service={service}
               />
             ))
           ) : (
@@ -68,7 +66,7 @@ export default class Search extends React.Component {
     return (
       <Block flex center style={styles.home}>
         {this.renderSearch()}
-        {this.renderProducts()}
+        {this.renderServices()}
       </Block>
     );
   }

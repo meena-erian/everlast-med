@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Dimensions, ScrollView } from "react-native";
 import { Button, Block, Text, Input, theme } from "galio-framework";
 import TabsHeader from "../components/TabsHeader";
-import { Icon, Product } from "../components/";
+import { Icon, Service } from "../components/";
 import { createAppContainer } from "react-navigation";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 const { width } = Dimensions.get("screen");
@@ -10,7 +10,7 @@ import services, { categories } from "../constants/services";
 import materialTheme from "../constants/Theme";
 
 
-class ProductsList extends React.Component {
+class ServicesList extends React.Component {
   render() {
     const { navigation } = this.props;
     const currentCategory = navigation.state.routeName;
@@ -22,12 +22,12 @@ class ProductsList extends React.Component {
           contentContainerStyle={styles.services}
         >
           <Block flex>
-            {includedServices.map((product, index) => (
-              <Product
-                key={`product-${index}`}
-                product={product}
-                horizontal={true} //{product.horizontal}
-                full={product.full}
+            {includedServices.map((service, index) => (
+              <Service
+                key={`service-${index}`}
+                service={service}
+                horizontal={true}
+                wrapped={true}
               />
             ))}
           </Block>
@@ -38,7 +38,7 @@ class ProductsList extends React.Component {
 }
 
 let tabs = {};
-Object.keys(categories).forEach((cat) => (tabs[cat] = ProductsList));
+Object.keys(categories).forEach((cat) => (tabs[cat] = ServicesList));
 
 const shadowStyle = {
   shadowColor: 'black',

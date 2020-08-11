@@ -33,8 +33,8 @@ const assetImages = [
   Images.Onboarding,
 ];
 
-//services.map(service => assetImages.push(service.image));
-//doctors.map(doctor => assetImages.push(doctor.image));
+services.map(service => assetImages.push(service.image));
+doctors.map(doctor => assetImages.push(doctor.image));
 
 function cacheImages(images) {
   //console.log("Caching ", images);

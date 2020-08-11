@@ -13,50 +13,36 @@ import materialTheme from "../constants/Theme";
 
 const { width } = Dimensions.get("screen");
 
-class Product extends React.Component {
+class Service extends React.Component {
   render() {
     const {
       navigation,
-      product,
-      horizontal,
-      full,
-      style,
-      priceColor,
-      imageStyle,
-      wrapped,
+      service,
     } = this.props;
-    /*
-    const imageStyles = [
-      styles.image,
-      full ? styles.fullImage : styles.horizontalImage,
-      imageStyle,
-    ];
-    */
    const imageStyles = [
-     wrapped ? styles.wrappedImage : styles.image,
+     styles.wrappedImage,
      styles.horizontalImage,
-     //imageStyle
    ];
-    const imageWrapperStyle = wrapped? [styles.imageContainer] : [styles.imageContainer, styles.shadow];
+    const imageWrapperStyle = [styles.imageContainer];
 
     return (
       <Block
-        row={horizontal}
-        card
-        flex
-        style={[styles.product, styles.shadow, style]}
+        row
+        //card
+        //flex
+        style={[styles.service]}
       >
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("Service", product)}
+          onPress={() => navigation.navigate("Service", service)}
         >
           <Block flex style={imageWrapperStyle}>
             <Image
-              source={{ uri: product.image ? product.image : Images.Profile }}
+              source={{ uri: service.image ? service.image : Images.Profile }}
               style={{
                 flex: 1,
                 resizeMode: "cover",
                 height: "100%",
-                borderRadius: wrapped? 0 : 10,
+                borderRadius: 0,
               }}
               containerStyle={imageStyles}
               placeholderStyle={{ flex: 1 }}
@@ -65,14 +51,14 @@ class Product extends React.Component {
           </Block>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("Service", product)}
+          onPress={() => navigation.navigate("Service", service)}
         >
-          <Block flex space="between" style={styles.productDescription}>
-            <Text size={14} style={styles.productTitle}>
-              {product.title}
+          <Block flex space="between" style={styles.serviceDescription}>
+            <Text size={14} style={styles.serviceTitle}>
+              {service.title}
             </Text>
-            <Text size={12} muted={!priceColor} color={priceColor}>
-              {product.category}
+            <Text size={12} muted={true}>
+              {service.category}
             </Text>
           </Block>
         </TouchableWithoutFeedback>
@@ -81,27 +67,28 @@ class Product extends React.Component {
   }
 }
 
-export default withNavigation(Product);
+export default withNavigation(Service);
 
 const styles = StyleSheet.create({
   wrappedImage: {
     marginHorizontal: theme.SIZES.BASE / 2,
-    marginTop: 0,
+    marginVertical: theme.SIZES.BASE / 2,
+    //marginTop: 0,
     borderRadius: 0,
   },
-  product: {
+  service: {
     backgroundColor: theme.COLORS.WHITE,
     marginVertical: theme.SIZES.BASE,
     borderWidth: 0,
     minHeight: 114,
   },
-  productTitle: {
+  serviceTitle: {
     flex: 1,
     flexWrap: "wrap",
     paddingBottom: 6,
     color: materialTheme.COLORS.EVERLAST_BLUE,
   },
-  productDescription: {
+  serviceDescription: {
     padding: theme.SIZES.BASE / 2,
   },
   imageContainer: {
