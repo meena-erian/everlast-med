@@ -9,13 +9,13 @@
       "ios",
       "android"
     ],
-    "version": "1.6.0",
+    "version": "2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#6C24AA"
+      "backgroundColor": "#16a74a"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +24,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.everlastwellness.app",
+      "buildNumber": "2"
+    },
+    "android": {
+      "package": "com.everlastwellness.app",
+      "versionCode": 2
     }
   }
 }
