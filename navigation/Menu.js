@@ -17,9 +17,11 @@ function CustomDrawerContent({
 }) {
   const insets = useSafeArea();
   const screens = [
-    "Home",
-    "Reservation",
+    "Explore Treatments",
+    "My Appointments",
+    "Offers",
     "Doctors",
+    "Account Settings",
     "About Us",
     "Contact Us",
     "Terms of Service",
