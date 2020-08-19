@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="everlastreactnative/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/everlastreactnative.iml" filepath="$PROJECT_DIR$/.idea/modules/everlastreactnative.iml" group="everlastreactnative" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-853038545/expo-constants.iml" filepath="$PROJECT_DIR$/.idea/modules/-853038545/expo-constants.iml" group="everlastreactnative/expo-constants" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1985773210/expo-error-recovery.iml" filepath="$PROJECT_DIR$/.idea/modules/1985773210/expo-error-recovery.iml" group="everlastreactnative/expo-error-recovery" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-18211968/expo-file-system.iml" filepath="$PROJECT_DIR$/.idea/modules/-18211968/expo-file-system.iml" group="everlastreactnative/expo-file-system" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1686601767/expo-font.iml" filepath="$PROJECT_DIR$/.idea/modules/1686601767/expo-font.iml" group="everlastreactnative/expo-font" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1447301467/expo-image-loader.iml" filepath="$PROJECT_DIR$/.idea/modules/-1447301467/expo-image-loader.iml" group="everlastreactnative/expo-image-loader" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/680416029/expo-keep-awake.iml" filepath="$PROJECT_DIR$/.idea/modules/680416029/expo-keep-awake.iml" group="everlastreactnative/expo-keep-awake" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1652382272/expo-linear-gradient.iml" filepath="$PROJECT_DIR$/.idea/modules/-1652382272/expo-linear-gradient.iml" group="everlastreactnative/expo-linear-gradient" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1867671147/expo-location.iml" filepath="$PROJECT_DIR$/.idea/modules/-1867671147/expo-location.iml" group="everlastreactnative/expo-location" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/955705444/expo-permissions.iml" filepath="$PROJECT_DIR$/.idea/modules/955705444/expo-permissions.iml" group="everlastreactnative/expo-permissions" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1113764978/expo-splash-screen.iml" filepath="$PROJECT_DIR$/.idea/modules/1113764978/expo-splash-screen.iml" group="everlastreactnative/expo-splash-screen" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2127885036/expo-sqlite.iml" filepath="$PROJECT_DIR$/.idea/modules/2127885036/expo-sqlite.iml" group="everlastreactnative/expo-sqlite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-187994454/expo-updates.iml" filepath="$PROJECT_DIR$/.idea/modules/-187994454/expo-updates.iml" group="everlastreactnative/expo-updates" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1285830590/react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/1285830590/react-native-community_masked-view.iml" group="everlastreactnative/react-native-community_masked-view" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-8673575/react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-8673575/react-native-gesture-handler.iml" group="everlastreactnative/react-native-gesture-handler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1081103267/react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/1081103267/react-native-reanimated.iml" group="everlastreactnative/react-native-reanimated" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/905997570/react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/905997570/react-native-safe-area-context.iml" group="everlastreactnative/react-native-safe-area-context" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1504561050/react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/1504561050/react-native-screens.iml" group="everlastreactnative/react-native-screens" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-997612902/unimodules-app-loader.iml" filepath="$PROJECT_DIR$/.idea/modules/-997612902/unimodules-app-loader.iml" group="everlastreactnative/unimodules-app-loader" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/455197730/unimodules-barcode-scanner-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/455197730/unimodules-barcode-scanner-interface.iml" group="everlastreactnative/unimodules-barcode-scanner-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1053018028/unimodules-camera-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/1053018028/unimodules-camera-interface.iml" group="everlastreactnative/unimodules-camera-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1853487104/unimodules-constants-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/-1853487104/unimodules-constants-interface.iml" group="everlastreactnative/unimodules-constants-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1053901038/unimodules-core.iml" filepath="$PROJECT_DIR$/.idea/modules/-1053901038/unimodules-core.iml" group="everlastreactnative/unimodules-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/675368359/unimodules-face-detector-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/675368359/unimodules-face-detector-interface.iml" group="everlastreactnative/unimodules-face-detector-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-319610159/unimodules-file-system-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/-319610159/unimodules-file-system-interface.iml" group="everlastreactnative/unimodules-file-system-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1725969130/unimodules-font-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/-1725969130/unimodules-font-interface.iml" group="everlastreactnative/unimodules-font-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1697310988/unimodules-image-loader-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/1697310988/unimodules-image-loader-interface.iml" group="everlastreactnative/unimodules-image-loader-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-501210443/unimodules-permissions-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/-501210443/unimodules-permissions-interface.iml" group="everlastreactnative/unimodules-permissions-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/734566170/unimodules-react-native-adapter.iml" filepath="$PROJECT_DIR$/.idea/modules/734566170/unimodules-react-native-adapter.iml" group="everlastreactnative/unimodules-react-native-adapter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1724389738/unimodules-sensors-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/1724389738/unimodules-sensors-interface.iml" group="everlastreactnative/unimodules-sensors-interface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-52457556/unimodules-task-manager-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/-52457556/unimodules-task-manager-interface.iml" group="everlastreactnative/unimodules-task-manager-interface" />
+    </modules>
+  </component>
+</project>
