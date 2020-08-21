@@ -21,6 +21,7 @@ export default function Header(props) {
   } = props;
   const activeTabIndex = navigation.state.index;
   const scroller = useRef();
+  const [currentRoute, setCurrentRoute] = useState(0);
   return (
     <View style={{ ...styles.tabContainer, ...headerStyle }}>
       <ScrollView
@@ -31,12 +32,13 @@ export default function Header(props) {
       >
         {navigationState.routes.map((route, index) => {
           const isRouteActive = index === activeTabIndex;
-          const currentStyle = isRouteActive 
-            ? {...tabStyle, color:"#1BA1F3", ...activeTabStyle}
-            : { color: "#000",...tabStyle };
+          const currentStyle = isRouteActive
+            ? { ...tabStyle, color: "#1BA1F3", ...activeTabStyle }
+            : { color: "#000", ...tabStyle };
           const [x, setX] = useState(0);
-          if (isRouteActive && scroller.current) {
-            scroller.current.scrollTo({ x: x });
+          if (isRouteActive && scroller.current && index !== currentRoute) {
+            scroller.current.scrollTo({ x: x, y: undefined, animated: true });
+            setCurrentRoute(index);
           }
 
           return (
@@ -66,7 +68,7 @@ export default function Header(props) {
       </ScrollView>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   tabContainer: {
